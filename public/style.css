@@ -2,10 +2,11 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 !important;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100vh;
     background: linear-gradient(135deg, #c51c1c, #764ba2);
+    padding-top: 3%;
 }
 
 .mb-0{
@@ -60,7 +61,19 @@ body{
     padding-bottom: 0 !important;
 }
 
+.header-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 40px 0 40px 0;
+    color: white;
+    font-size: 80px;
+    font-weight: 150 !important;
+}
+
+
 .container {
+    justify-content: center;
     background: white;
     padding: 30px;
     width: 350px;
@@ -109,4 +122,32 @@ body{
     margin-top: 20px;
     padding: 0;
     list-style: none;
+}
+
+.todo-container{
+    display: flex;
+}
+
+.task-item{
+    display: flex;
+    background-color: #f3f3f3;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: space-between;
+    font-size: large;
+    padding: 12px 8px 12px 8px;
+} 
+
+.task-item:hover{
+    transition: ease-in 0.3s;
+    color:rgb(243, 243, 243);
+    background-color: #999999;
+}
+
+.mark-btn{
+    margin: 0 4px 0 4px;
+}
+
+.delete-btn{
+    margin: 0 4px 0 4px;
 }
