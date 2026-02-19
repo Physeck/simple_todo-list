@@ -9,6 +9,10 @@ body{
     padding-top: 3%;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 .mb-0{
     margin-bottom: 0 !important;
 }
@@ -71,14 +75,16 @@ body{
     font-weight: 150 !important;
 }
 
-
 .container {
     justify-content: center;
     background: white;
     padding: 30px;
-    width: 350px;
+    min-width: 350px;
+    max-width: 1200px;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    max-height: 65vh;
+    overflow-y: auto;
 }
 
 .todo-header h1 {
@@ -118,14 +124,14 @@ body{
     background: #5a67d8;
 }
 
+.todo-container{
+    display: flex;
+}
+
 #taskList {
     margin-top: 20px;
     padding: 0;
     list-style: none;
-}
-
-.todo-container{
-    display: flex;
 }
 
 .task-item{
@@ -135,19 +141,53 @@ body{
     align-items: center;
     justify-content: space-between;
     font-size: large;
+    margin-top: 8px;
     padding: 12px 8px 12px 8px;
 } 
 
 .task-item:hover{
-    transition: ease-in 0.3s;
+    transition: ease-in 0.2s;
     color:rgb(243, 243, 243);
     background-color: #999999;
 }
 
+.task-text{
+    min-width: 0;
+    word-wrap: break-word;
+}
+
+.completed .task-text{
+    text-decoration: line-through;
+    opacity: 20%;
+}
+
 .mark-btn{
     margin: 0 4px 0 4px;
+    border: 0;
+    color: white;
+    background-color: green;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.mark-btn:hover{
+    transition: ease-in 0.2s;
+    background-color: #1c5800;
 }
 
 .delete-btn{
     margin: 0 4px 0 4px;
+    border: 0;
+    color: white;
+    background-color: red;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.delete-btn:hover{
+    transition: ease-in 0.2s;
+    color: #ff0000;
+    background-color: #ffacac;
 }

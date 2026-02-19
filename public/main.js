@@ -18,7 +18,10 @@ taskInput.addEventListener("keydown", (event) => {
 function addTask() {
     const taskText = taskInput.value.trim();
 
-    if (!taskText) return;
+    if (!taskText) {
+        alert("This input field must have characters before added!");
+        return;
+    }
 
     const li = document.createElement("li");
     li.classList.add("task-item");
@@ -44,13 +47,19 @@ function addTask() {
     taskList.append(li);
 
     taskInput.value = "";
-}
+};
 
-function deleteTask() {
-    if (!taskList) return;
+taskList.addEventListener("click", (event) => {
+    const item = event.target;
 
-    const li = document.createElement("li");
-    li.removeChild();
+    const li = item.closest(".task-item");
+    if (!li) return;
 
-    taskInput.value = "";
-}
+    if (item.classList.contains("mark-btn")) {
+        li.classList.toggle("completed");
+    }
+
+    if (item.classList.contains("delete-btn")) {
+        li.remove();
+    }
+});
